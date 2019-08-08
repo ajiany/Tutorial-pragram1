@@ -61,7 +61,7 @@
 	<div id="moviebox" style="margin-top: 100px; display: none"
 		align="center">
 		<video id="movie" height="500px" controls="controls"
-			src="http://vd.yinyuetai.com/sh.yinyuetai.com/uploads/videos/common/74B70168929FF3BC930BAD3647882B83.mp4" onended="onVideoEnd();" />
+			src="http://vd.yinyuetai.com/sh.yinyuetai.com/uploads/videos/common/74B70168929FF3BC930BAD3647882B83.mp4" onended="onVideoEnd();"></video>
 	</div>
 </body>
 </html>

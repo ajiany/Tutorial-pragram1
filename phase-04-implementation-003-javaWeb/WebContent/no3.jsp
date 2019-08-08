@@ -78,7 +78,7 @@
 	<div id="moviebox" style="margin-top: 100px; display: none"
 		align="center">
 		<video id="movie" height="500px" controls="controls"
-			src="/static/video/movie.mp4" onended="onVideoEnd();" />
+			src="/static/video/movie.mp4" onended="onVideoEnd();"></video>
 
 	</div>
 	<div id="hornor" style="display:none;position:absolute;left:300px; bottom:10px;color:white;font-size:24px" align="center">谨以此向今年的电影《流浪地球》和华为公司在 2019 年发生的事表示致敬 !  本网页将放在以下网站 sdlc.huaku-2019.xyz (华为公司的云服务器) </div>
