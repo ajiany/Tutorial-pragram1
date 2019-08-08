@@ -83,6 +83,10 @@
 		简明感悟<br /> <span style="font-size: 18px; color: grey">
 		-许家健 </span><br /> <br /> 宇宙洪荒，日月盈昃。 <br /> 辰宿列张，唯爱永恒。
 	</div>
+	<!-- /跳转新的JSP -->
+	<div>
+		<button onclick="window.location.href = '/ajian_new_01.jsp'">My new JSP</button>
+	</div>
 	<img src="/static/imgs/spaceship.png"
 		style="position: absolute; left: 10px; bottom: 10px; width: 150px"
 		onclick="run(this);return false" 
