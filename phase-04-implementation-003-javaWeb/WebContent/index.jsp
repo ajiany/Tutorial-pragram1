@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	
+<%@page import="java.sql.*" %>	
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,6 +19,8 @@
 	function run(clickedObj) {
 		var web_h = document.documentElement.clientHeight;
 		var web_w = document.documentElement.clientWidth;
+		var hide = document.getElementById("enter_information_father");
+		hide.style.display = "none";
 		$("#firstline").fadeOut('slow');
 		$('#intr')[0].pause();
 		$('#poem')[0].play();
@@ -84,8 +88,9 @@
 		-许家健 </span><br /> <br /> 宇宙洪荒，日月盈昃。 <br /> 辰宿列张，唯爱永恒。
 	</div>
 	<!-- /跳转新的JSP -->
-	<div>
-		<button onclick="window.location.href = '/ajian_new_01.jsp'">My new JSP</button>
+	<div id="jump">
+		<button onclick="window.location.href = '/ajian_new_01.jsp'">My New JSP</button>
+		<button style="display:block;" onclick="window.location.href = '/NewServlet'">My New Servlet</button>
 	</div>
 	<img src="/static/imgs/spaceship.png"
 		style="position: absolute; left: 10px; bottom: 10px; width: 150px"
@@ -95,10 +100,117 @@
 	<div id="moviebox" style="margin-top: 100px; display: none" align="center">
 		<video id="movie" height="300px" controls="controls" 
 		src="/static/video/Interstellar travel.mp4" onended="onVideoEnd();">
-		</video>
+		</video>	
 	</div>
+	
+ 	      <!-- 登陆信息登记 -->
+	<div id="enter_information_father" align="center" style="display:block;">
+		<div id="infor_son" style="width:400px;height:165px;">
+		<form method="get" id="test_infor" novalidate="novalidate">
+			<table>
+				<tbody>
+					<tr>
+						<td colspan="2">
+							<span style="font-size:20px; color:#3164af;">LOGIN INFORMATION REGISTRATIONN</span>
+						</td>
+					</tr>
+						
+					
+					<tr>
+						<td>
+							<label>姓名</label>
+						</td>
+						
+						<td>
+							<input type="text" name="watch_name" size="35px" id="user">
+							<label></label>
+						</td>
+					</tr>
+					
+					<tr>
+						<td>
+							性别
+						</td>
+						
+						<td>
+							<span>
+								<input type="radio" name="sex" value="男">
+								男
+								<input type="radio" name="sex" value="女">
+								女
+							</span>
+						</td>
+					</tr>
+					
+					<tr>
+						<td>
+							出生日期
+						</td>
+						
+						<td>
+							<input type="date" name="date" size="35px">
+						</td>
+					</tr>
+					
+					<tr>
+						<td>
+							邮箱
+						</td>
+						
+						<td>
+							<input id="email" type="text" name="email" size="35px">
+						</td>
+					</tr>
+					
+					<tr>
+						<td colspan="2" align="center">
+							<input type="submit" value="submit">
+							<input type="reset" value="reset">
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</form>	
+		</div>
+	</div>
+ 	
 	<div id="hornor" style="display:none;position:absolute;left:10px; bottom:10px;color:white;font-size:24px" align="center">
-		感谢你的观赏，请你再静下心来欣赏一下这首静谧的时空之曲
+		<!--   感谢你的观赏，请你再静下心来欣赏一下这首静谧的时空之曲 	-->
+		  
+		  <%  
+        try {  
+            Class.forName("com.mysql.jdbc.Driver");  ////驱动程序名
+            String url = "jdbc:mysql://localhost:3306/firstdatabase"; //数据库名
+            String username = "root";  //数据库用户名
+            String password = "8xujiajian!";  //数据库用户密码
+            Connection conn = DriverManager.getConnection(url, username, password);  //连接状态
+
+            if(conn != null){  
+                out.print("数据库连接成功！");  
+                out.print("<br />"); 
+			%>
+		  
+		  <%
+                Statement stmt = null;  
+                ResultSet rs = null;  
+                String sql = "SELECT * FROM firsttable;";  //查询语句
+                stmt = conn.createStatement();  
+                rs = stmt.executeQuery(sql);  
+                out.print("查询结果：");  
+				out.print("<br/>");
+                while (rs.next()) {%>
+ 			<%=rs.getString("end") %>
+		  <%
+            }  
+            }else{  
+                out.print("连接失败！");  
+            }  
+        }catch (Exception e) {        
+            //e.printStackTrace();  
+            out.print("数据库连接异常！");  
+        }  
+			%> 
+ 
 	</div>
 </body>
 </html>
