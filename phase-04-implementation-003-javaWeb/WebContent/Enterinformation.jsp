@@ -7,8 +7,15 @@
 <title>EnterInformation</title>
 </head>
 <body>
+	<% if( request.getMethod().equals("POST") ){ %>
+
+    <div id="showInformation" align="center">
+		<%@ include file="showLoginInfor.jsp" %>
+    </div>
+
+   <% }else if( request.getMethod().equals("GET") ){ %> 
 	<div id="infor_son" style="width:400px;height:165px;">
-		<form method="get" id="test_infor" novalidate="novalidate">
+		<form method="post" id="test_infor" novalidate="novalidate">
 			<table>
 				<tbody>
 					<tr>
@@ -73,6 +80,7 @@
 				</tbody>
 			</table>
 		</form>	
+		<%} %>
 		</div>
 </body>
 </html>

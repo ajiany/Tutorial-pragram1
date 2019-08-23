@@ -29,6 +29,8 @@ public class NewServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		response.setContentType("text/html;charset=UTF-8");
 		response.getWriter().append("你好，欢迎来到我新建的Servlet页面，我是第一个流浪的 Servlet ").append(request.getContextPath());
+		  
+
 	}
 
 	/**
