@@ -109,7 +109,7 @@
 	</div>
  	
 	<div id="hornor" style="display:none;position:absolute;left:10px; bottom:10px;color:white;font-size:24px" align="center">
-		<!--   感谢你的观赏，请你再静下心来欣赏一下这首静谧的时空之曲 	-->
+		<!--   感谢您的观赏，请您再静下心来欣赏一下这首静谧的时空之曲 	-->
 		  
 		  <%  
         try {  
@@ -130,10 +130,10 @@
                 String sql = "SELECT * FROM firsttable;";  //查询语句
                 stmt = conn.createStatement();  
                 rs = stmt.executeQuery(sql);  
-                out.print("查询结果：");  
+                //out.print("查询结果：");  
 				out.print("<br/>");
                 while (rs.next()) {%>
- 			<%=rs.getString("end") %>
+ 			<%=rs.getString("text") %>
 		  <%
             }  
             }else{  
