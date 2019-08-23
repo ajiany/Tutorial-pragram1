@@ -78,7 +78,8 @@
 	<audio id="poem" src="/static/audio/waiting_01.mp3"preload="auto">
 	</audio>
     <span id="firstline" style="font-size: 20px; color: white">
-    	你好，这是我这学期根据“软件工程导论”设计和实现的一个"<span style="font-size: 38px; color: red">星际穿越</span>”的模拟工程！ 欢迎你的观赏,谢谢！点击屏幕左下角的飞船，穿越时间，空间去探险吧！！
+    	你好，这是我这学期根据“软件工程导论”设计和实现的一个"<span style="font-size: 38px; color: orange">星际穿越</span>”的模拟工程！ 欢迎你的观赏,谢谢！
+    	<span style="color:orange">点击屏幕左下角的飞船，穿越时间，空间去探险吧！！</span>
 	</span>
 	<audio id="waiting" src="/static/audio/Star_uni.mp3" preload="auto" onended="onWaitingAudioEnd();">
 	</audio>
