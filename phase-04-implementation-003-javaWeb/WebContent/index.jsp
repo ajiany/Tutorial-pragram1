@@ -2,6 +2,11 @@
 	pageEncoding="UTF-8"%>
 	
 <%@page import="java.sql.*" %>	
+<%@page import="sdlc.*"%>
+<%  
+	  Datebase db=new Datebase();
+	  String text=db.Start(1);
+%> 
 <!DOCTYPE html>
 <html>
 <head>
@@ -111,41 +116,7 @@
  	
 	<div id="hornor" style="display:none;position:absolute;left:10px; bottom:10px;color:white;font-size:24px" align="center">
 		<!--   感谢您的观赏，请您再静下心来欣赏一下这首静谧的时空之曲 	-->
-		  
-		  <%  
-        try {  
-            Class.forName("com.mysql.jdbc.Driver");  ////驱动程序名
-            String url = "jdbc:mysql://localhost:3306/firstdatabase"; //数据库名
-            String username = "root";  //数据库用户名
-            String password = "8xujiajian!";  //数据库用户密码
-            Connection conn = DriverManager.getConnection(url, username, password);  //连接状态
-
-            if(conn != null){  
-                out.print("数据库连接成功！");  
-                out.print("<br />"); 
-			%>
-		  
-		  <%
-                Statement stmt = null;  
-                ResultSet rs = null;  
-                String sql = "SELECT * FROM firsttable;";  //查询语句
-                stmt = conn.createStatement();  
-                rs = stmt.executeQuery(sql);  
-                //out.print("查询结果：");  
-				out.print("<br/>");
-                while (rs.next()) {%>
- 			<%=rs.getString("text") %>
-		  <%
-            }  
-            }else{  
-                out.print("连接失败！");  
-            }  
-        }catch (Exception e) {        
-            //e.printStackTrace();  
-            out.print("数据库连接异常！");  
-        }  
-			%> 
- 
+      <%=text %>
 	</div>
 </body>
 </html>
