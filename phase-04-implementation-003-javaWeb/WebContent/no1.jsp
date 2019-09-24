@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-
+	pageEncoding="UTF-8"%>	
 <%
     /* No.1 :  Java代码藏于 JSP 中，与 html混合，这是JSP的特征，实验 1， 我们将一些字符串赋予java变量，然后看下面如何应用   */
     String title="流浪地球";
